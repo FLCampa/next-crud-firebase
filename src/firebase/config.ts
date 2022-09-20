@@ -11,6 +11,7 @@ if (!firebase.apps.length) {
 
   firebase.firestore().settings({
     experimentalForceLongPolling: true,
+    merge: true,
   });
 }
 
