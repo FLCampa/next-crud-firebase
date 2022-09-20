@@ -3,6 +3,10 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 
 if (!firebase.apps.length) {
+  firebase.firestore().settings({
+    experimentalForceLongPolling: true,
+  });
+
   firebase.initializeApp({
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
